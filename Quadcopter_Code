@@ -1,0 +1,53 @@
+public class Quadcopter {
+    static void Liftoff()
+    {
+        System.out.println("The drone is all set to takeoff");
+        System.out.println("constantly receiving the signals from transmitter");
+    }
+    static void Landing()
+    {
+        System.out.println("P1&P3 spin clockwise,P2&P4 spin anticlockwise and hits the ground gradually");
+    }
+    public static void main(String[] args){
+        Liftoff();
+        Move.move_left();
+        Move.move_right();
+        Move.move_forward();
+        Move.move_backward();
+        Camera.capture();
+        Battery.low_battery();
+        Landing();
+
+    }
+}
+class Move{
+    static void move_left()
+    {
+       System.out.println("P1&P4 decelerate and P2&P3 accelerate, thereby the copter moves left");
+    }
+    static void move_right()
+    {
+        System.out.println("P1&P4 accelerate and P2&P3 decelerate, thereby the copter moves right");
+    }
+    static void move_forward()
+    {
+        System.out.println("P1&P2 decelerate and P3&P4 accelerate, thereby the copter moves forward");
+    }
+    static void move_backward()
+    {
+        System.out.println("P1&P2 accelerate and P3&P4 decelerate, thereby the copter moves backward");
+    }
+}
+class Camera{
+    static void capture()
+    {
+        System.out.println("I will start capturing recording and transmit it once i connect to the battery");
+    }
+}
+class Battery{
+    static void low_battery()
+    {
+        System.out.println("When the battery is low, the indicator glows");
+    }
+}
+
